@@ -1,2 +1,2 @@
-# my-activity
-Angular app for tracking daily routine.
+# My Activity
+Application for tracking daily routine made with Angular.
