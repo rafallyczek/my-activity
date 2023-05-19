@@ -1,0 +1,24 @@
+.content {
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    height: 100%;
+}
+
+header{
+    display: grid;
+    align-items: center;
+    background-color: steelblue;
+    padding-left: .5rem;
+}
+
+main{
+    background-color: #444;
+    padding: .5rem;
+}
+
+footer{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background-color: steelblue;
+}

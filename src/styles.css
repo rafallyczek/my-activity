@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+:root {
+    --clr-light: hsl(0, 0%, 98%);
+  }
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "Roboto";
+  color: var(--clr-light);
+}
+
+p,
+h1
+{
+  margin: 0;
+}
+
+a{
+  color: inherit;
+}
