@@ -2,6 +2,9 @@
 
 :root {
     --clr-light: hsl(0, 0%, 98%);
+    --clr-dark: hsl(0, 0%, 27%);
+
+    --clr-primary: hsl(207, 44%, 49%);
   }
 
 html,
@@ -20,4 +23,22 @@ h1
 
 a{
   color: inherit;
+}
+
+/* Utility */
+
+.text-clr-dark{
+  color: var(--clr-dark);
+}
+
+.bgc-light{
+  background-color: var(--clr-light);
+}
+
+.bgc-dark{
+  background-color: var(--clr-dark);
+}
+
+.bgc-primary{
+  background-color: var(--clr-primary);
 }

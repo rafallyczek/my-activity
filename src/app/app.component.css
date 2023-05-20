@@ -1,18 +1,22 @@
 .content {
     display: grid;
     grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 200px 1fr;
     height: 100%;
 }
 
 header{
     display: grid;
     align-items: center;
-    background-color: steelblue;
+    grid-column: 1 / -1;
     padding-left: .5rem;
 }
 
+nav{
+    padding: .5rem;
+}
+
 main{
-    background-color: #444;
     padding: .5rem;
 }
 
@@ -20,5 +24,5 @@ footer{
     display: grid;
     align-items: center;
     justify-content: center;
-    background-color: steelblue;
+    grid-column: 1 / -1;
 }
