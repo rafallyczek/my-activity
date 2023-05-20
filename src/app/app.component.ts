@@ -12,7 +12,6 @@ export class AppComponent {
 
   //Hide or show navigation bar
   toggleNav(){
-    console.log(this.iconCaret);
     if(this.iconCaret.iconName === "caret-left"){
       this.iconCaret = faCaretRight;
     } else {
