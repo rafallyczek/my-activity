@@ -1,8 +1,11 @@
+/* Layout */
+
 .content {
     display: grid;
     grid-template-rows: 50px 1fr 50px;
     grid-template-columns: 200px 1fr;
     height: 100%;
+    transition: 300ms;
 }
 
 header{
@@ -13,6 +16,7 @@ header{
 }
 
 nav{
+    position: relative;
     padding: .5rem;
 }
 
@@ -25,4 +29,16 @@ footer{
     align-items: center;
     justify-content: center;
     grid-column: 1 / -1;
+}
+
+/* Buttons */
+
+.nav-toggle{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.nav-hidden{
+    grid-template-columns: 50px 1fr;
 }

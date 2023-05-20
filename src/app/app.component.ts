@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faPersonRunning } from '@fortawesome/free-solid-svg-icons';
+import { faPersonRunning, faCaretLeft, faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +7,16 @@ import { faPersonRunning } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  faPersonRunning = faPersonRunning;
+  iconRunning = faPersonRunning;
+  iconCaret = faCaretLeft;
+
+  //Hide or show navigation bar
+  toggleNav(){
+    console.log(this.iconCaret);
+    if(this.iconCaret.iconName === "caret-left"){
+      this.iconCaret = faCaretRight;
+    } else {
+      this.iconCaret = faCaretLeft;
+    }
+  }
 }
