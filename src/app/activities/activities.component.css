@@ -1,0 +1,12 @@
+/* Layout */
+.activities{
+    display: grid;
+    gap: .5rem;
+}
+
+/* Elements */
+.activity{
+    background-color: var(--clr-gray);
+    padding: .5rem;
+    border-radius: .5rem;
+}

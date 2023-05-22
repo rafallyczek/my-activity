@@ -1,1 +1,7 @@
-<p>activities works!</p>
+<div class="activities">
+    <div class="activity" *ngFor="let activity of activityList">
+        <p class="fw-bold fs-medium">{{activity.title}}</p>
+        <p><span class="fw-bold">Current streak:</span> {{activity.currentStreak}}</p>
+        <p><span class="fw-bold">Longest streak:</span> {{activity.longestStreak}}</p>
+    </div>
+</div>

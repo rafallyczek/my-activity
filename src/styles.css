@@ -3,8 +3,12 @@
 :root {
     --clr-light: hsl(0, 0%, 98%);
     --clr-dark: hsl(0, 0%, 27%);
-
+    --clr-gray: hsl(0, 0%, 66%);
     --clr-primary: hsl(207, 44%, 49%);
+
+    --fw-bold: 600;
+
+    --fs-medium: 1.2rem;
   }
 
 html,
@@ -51,4 +55,12 @@ button{
 
 .bgc-primary{
   background-color: var(--clr-primary);
+}
+
+.fw-bold{
+  font-weight: var(--fw-bold);
+}
+
+.fs-medium{
+  font-size: var(--fs-medium);
 }
