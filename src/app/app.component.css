@@ -43,3 +43,9 @@ footer{
 .nav-hidden{
     grid-template-columns: 50px 1fr;
 }
+
+/* Lists */
+
+.nav-links, .nav-links li{
+    margin-top: .5rem;
+}

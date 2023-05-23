@@ -1,19 +1,27 @@
 <div class="content" [ngClass]="iconCaret.iconName === 'caret-right' ? 'nav-hidden' : ''">
+
   <header class="bgc-primary">
     <h1><fa-icon [icon]="iconRunning" size="sm"></fa-icon> MyActivity</h1>
   </header>
+
   <nav class="bgc-dark">
     <button class="nav-toggle" [attr.title]="iconCaret.iconName === 'caret-left' ? 'Hide navigation' : 'Show navigation'" (click)="toggleNav()"><fa-icon [icon]="iconCaret" size="xl"></fa-icon></button>
     <ng-template [ngIf]="iconCaret.iconName === 'caret-left'">
       <h2>Menu</h2>
+      <ul class="nav-links">
+        <li><a routerLink="/activities">Activities</a></li>
+      </ul>
     </ng-template>
   </nav>
+
   <main class="bgc-light text-clr-dark">
-    <app-activities></app-activities>
+    <router-outlet></router-outlet>
   </main>
+
   <footer class="bgc-primary">
     <p>
       <a href="https://github.com/rafallyczek" target="_blank">rafallyczek</a>  © 2023
     </p>
   </footer>
+
 </div>
