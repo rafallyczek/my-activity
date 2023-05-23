@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Activity } from './activity.model';
 
 @Component({
@@ -6,24 +6,29 @@ import { Activity } from './activity.model';
   templateUrl: './activities.component.html',
   styleUrls: ['./activities.component.css']
 })
-export class ActivitiesComponent {
+export class ActivitiesComponent implements OnInit{
 
-  activityList: Activity[] = [
-    {
-      title: "Running",
-      currentStreak: 0,
-      longestStreak: 0
-    },
-    {
-      title: "Reading",
-      currentStreak: 7,
-      longestStreak: 7
-    },
-    {
-      title: "Listening practice",
-      currentStreak: 1,
-      longestStreak: 5
-    },
-  ];
+  activityList: Activity[] = [];
+
+  ngOnInit(): void {
+    //TODO: replace with call to local storage after adding it to app
+    this.activityList = [
+      {
+        title: "Running",
+        currentStreak: 0,
+        longestStreak: 0
+      },
+      {
+        title: "Reading",
+        currentStreak: 7,
+        longestStreak: 7
+      },
+      {
+        title: "Listening practice",
+        currentStreak: 1,
+        longestStreak: 5
+      },
+    ];
+  }
 
 }
