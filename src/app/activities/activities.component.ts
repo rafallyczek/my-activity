@@ -1,34 +1,22 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity } from './activity.model';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-activities',
   templateUrl: './activities.component.html',
-  styleUrls: ['./activities.component.css']
+  styleUrls: ['./activities.component.css'],
 })
-export class ActivitiesComponent implements OnInit{
+export class ActivitiesComponent implements OnInit {
+  constructor(private localStorageService: LocalStorageService) {}
 
   activityList: Activity[] = [];
 
   ngOnInit(): void {
-    //TODO: replace with call to local storage after adding it to app
-    this.activityList = [
-      {
-        title: "Running",
-        currentStreak: 0,
-        longestStreak: 0
-      },
-      {
-        title: "Reading",
-        currentStreak: 7,
-        longestStreak: 7
-      },
-      {
-        title: "Listening practice",
-        currentStreak: 1,
-        longestStreak: 5
-      },
-    ];
+    if (this.localStorageService.isEmpty()) {
+      this.localStorageService.saveData(this.activityList);
+    } else {
+      this.activityList = this.localStorageService.loadData();
+    }
   }
-
 }
