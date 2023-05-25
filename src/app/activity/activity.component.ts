@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity } from './activity.model';
-import { LocalStorageService } from '../services/local-storage.service';
+import { LocalStorageService } from '../local-storage/local-storage.service';
 
 @Component({
   selector: 'app-activities',
