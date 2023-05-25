@@ -1,9 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { ActivitiesComponent } from "./activities/activities.component";
+import { ActivityComponent } from "./activity/activity.component";
 
 const routes: Routes = [
-    { path: "activities", component: ActivitiesComponent },
+    { path: "activities", component: ActivityComponent },
     { path: "", redirectTo: "activities", pathMatch: "full" },
     { path: "**", redirectTo: "activities" },
 ];

@@ -4,10 +4,10 @@ import { LocalStorageService } from '../services/local-storage.service';
 
 @Component({
   selector: 'app-activities',
-  templateUrl: './activities.component.html',
-  styleUrls: ['./activities.component.css'],
+  templateUrl: './activity.component.html',
+  styleUrls: ['./activity.component.css'],
 })
-export class ActivitiesComponent implements OnInit {
+export class ActivityComponent implements OnInit {
   constructor(private localStorageService: LocalStorageService) {}
 
   activityList: Activity[] = [];
