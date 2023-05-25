@@ -18,7 +18,7 @@ export class LocalStorageService {
     localStorage.setItem('activities', JSON.stringify(data));
   }
 
-  loadData() {
+  loadData(): Activity[] {
     return JSON.parse(localStorage.getItem('activities')!);
   }
 }
