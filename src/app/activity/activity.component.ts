@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity } from './activity.model';
-import { LocalStorageService } from '../local-storage/local-storage.service';
+import { ActivityService } from './activity-service/activity.service';
 
 @Component({
   selector: 'app-activities',
@@ -8,15 +8,11 @@ import { LocalStorageService } from '../local-storage/local-storage.service';
   styleUrls: ['./activity.component.css'],
 })
 export class ActivityComponent implements OnInit {
-  constructor(private localStorageService: LocalStorageService) {}
+  constructor(private activityService: ActivityService) {}
 
   activityList: Activity[] = [];
 
   ngOnInit(): void {
-    if (this.localStorageService.isEmpty()) {
-      this.localStorageService.saveData(this.activityList);
-    } else {
-      this.activityList = this.localStorageService.loadData();
-    }
+    this.activityList = this.activityService.getActivities();
   }
 }
