@@ -8,6 +8,7 @@
 
     --fw-bold: 600;
 
+    --fs-small: .8rem;
     --fs-medium: 1.2rem;
   }
 
@@ -46,7 +47,11 @@ button{
   background: none;
   border: none;
   cursor: pointer;
-  color: inherit;
+}
+
+.btn{
+  padding: .3rem .6rem;
+  border-radius: .2rem;
 }
 
 /* Utility */
