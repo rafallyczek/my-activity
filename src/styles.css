@@ -6,6 +6,12 @@
     --clr-gray: hsl(0, 0%, 66%);
     --clr-primary: hsl(207, 44%, 49%);
 
+    --clr-success: hsl(130, 55%, 45%);
+    --clr-success-dark: hsl(130, 55%, 40%);
+
+    --clr-danger: hsl(0, 55%, 45%);
+    --clr-danger-dark: hsl(0, 55%, 40%);
+
     --fw-bold: 600;
 
     --fs-small: .8rem;
@@ -76,6 +82,14 @@ button{
   font-weight: var(--fw-bold);
 }
 
+.fs-small{
+  font-size: var(--fs-small);
+}
+
 .fs-medium{
   font-size: var(--fs-medium);
+}
+
+.text-clr-danger{
+  color: var(--clr-danger-dark);
 }

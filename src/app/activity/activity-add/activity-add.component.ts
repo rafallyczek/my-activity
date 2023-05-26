@@ -1,7 +1,6 @@
-import { Component } from '@angular/core';
-import { Activity } from '../activity.model';
+import { Component, OnInit } from '@angular/core';
 import { ActivityService } from '../activity-service/activity.service';
-import { NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,23 +8,29 @@ import { Router } from '@angular/router';
   templateUrl: './activity-add.component.html',
   styleUrls: ['./activity-add.component.css']
 })
-export class ActivityAddComponent {
+export class ActivityAddComponent implements OnInit {
 
-  constructor(private activityService: ActivityService, private router: Router) {}
+  activityForm!: FormGroup;
 
-  activity: Activity = {
-    title: "",
-    currentStreak: 0,
-    longestStreak: 0
+  constructor(private activityService: ActivityService, private router: Router, private formBuilder: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.activityForm = this.formBuilder.group({
+      title: ["", [Validators.required]],
+      currentStreak: [0],
+      longestStreak: [0]
+    });
   }
 
-  addActivity(activityForm: NgForm){
-    this.activityService.addActivity({title: this.activity.title, currentStreak: this.activity.currentStreak, longestStreak: this.activity.longestStreak});
-    activityForm.resetForm({
-      title: "",
-      currentStreak: 0,
-      longestStreak: 0
-    });
+  addActivity(){
+    this.activityService.addActivity(this.activityForm.getRawValue());
+    this.activityForm.reset(
+      {
+        title: "",
+        currentStreak: 0,
+        longestStreak: 0
+      }
+    );
     this.router.navigate(["/activities"]);
   }
 

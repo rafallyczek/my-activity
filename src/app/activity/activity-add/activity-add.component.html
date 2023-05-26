@@ -1,13 +1,14 @@
-<form (ngSubmit)="addActivity(activityForm)" #activityForm="ngForm">
+<form [formGroup]="activityForm" (ngSubmit)="addActivity()">
     <div class="form-title">
         <h2>Add new activity</h2>
     </div>
     <div class="form-input">
-        <label for="title">TITLE</label>
-        <input [(ngModel)]="activity.title" name="title" id="title" type="text" required>
+        <label [ngClass]="activityForm.get('title')?.hasError('required') && activityForm.get('title')?.touched ? 'text-clr-danger' : ''" for="title">TITLE</label>
+        <input [ngClass]="activityForm.get('title')?.hasError('required') && activityForm.get('title')?.touched ? 'invalid' : ''" formControlName="title" name="title" id="title" type="text" required>
+        <p class="text-clr-danger fs-small" *ngIf="activityForm.get('title')?.hasError('required') && activityForm.get('title')?.touched">Please provide title!</p>
     </div>
     <div class="form-buttons">
-        <button class="btn submit-btn" type="submit">Submit</button>
+        <button class="btn submit-btn" type="submit" [disabled]="activityForm.invalid" [attr.title]="activityForm.invalid ? 'Form is invalid' : 'Submit form'">Add activity</button>
         <button routerLink="/activities" class="btn cancel-btn">Close</button>
     </div>
 </form>

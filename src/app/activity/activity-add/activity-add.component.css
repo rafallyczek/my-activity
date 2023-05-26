@@ -29,19 +29,30 @@
 /* Buttons */
 
 .btn.submit-btn{
-    background-color: hsl(130, 55%, 45%);
+    background-color: var(--clr-success);
     color: var(--clr-light);
 }
 
 .btn.submit-btn:hover{
-    background-color: hsl(130, 55%, 40%);
+    background-color: var(--clr-success-dark);
+}
+
+.btn.submit-btn:disabled{
+    background-color: var(--clr-success-dark);
+    color: var(--clr-dark);
 }
 
 .btn.cancel-btn{
-    background-color: hsl(0, 55%, 45%);
+    background-color: var(--clr-danger);
     color: var(--clr-light);
 }
 
 .btn.cancel-btn:hover{
-    background-color: hsl(0, 55%, 40%);
+    background-color: var(--clr-danger-dark);
+}
+
+/* Inputs */
+
+.form-input > input.invalid{
+    border: 1px solid var(--clr-danger-dark);
 }
