@@ -6,6 +6,7 @@ import { ActivityComponent } from './activity.component';
 import { ActivityAddComponent } from './activity-add/activity-add.component';
 import { FormsModule } from '@angular/forms';
 import { ActivityService } from './activity-service/activity.service';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 function initializeActivities(activityService: ActivityService){
   return () => activityService.init();
@@ -19,6 +20,7 @@ function initializeActivities(activityService: ActivityService){
   imports: [
     CommonModule,
     ActivityRoutingModule,
+    FontAwesomeModule,
     FormsModule
   ],
   providers: [

@@ -4,8 +4,9 @@ import { ActivityComponent } from './activity.component';
 import { ActivityAddComponent } from './activity-add/activity-add.component';
 
 const routes: Routes = [
-  { path: "activities", component: ActivityComponent },
-  { path: "activities/add", component: ActivityAddComponent },
+  { path: "activities", component: ActivityComponent, children: [
+    { path: "add", component: ActivityAddComponent }
+  ] },
 ];
 
 @NgModule({

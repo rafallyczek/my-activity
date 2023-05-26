@@ -1,5 +1,7 @@
 <div class="activities">
     <h2>Activities</h2>
+    <button *ngIf="addBtn" class="btn add-btn" routerLink="add">Add activity <fa-icon [icon]="iconPlus"></fa-icon></button>
+    <router-outlet (activate)="toggleAddBtn()" (deactivate)="toggleAddBtn(); loadActivities();"></router-outlet>
     <div class="activity" *ngFor="let activity of activityList">
         <p class="fw-bold fs-medium">{{activity.title}}</p>
         <p><span class="fw-bold">Current streak:</span> {{activity.currentStreak}}</p>

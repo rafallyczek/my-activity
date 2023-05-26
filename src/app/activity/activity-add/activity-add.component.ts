@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Activity } from '../activity.model';
 import { ActivityService } from '../activity-service/activity.service';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-activity-add',
@@ -10,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ActivityAddComponent {
 
-  constructor(private activityService: ActivityService) {}
+  constructor(private activityService: ActivityService, private router: Router) {}
 
   activity: Activity = {
     title: "",
@@ -25,6 +26,7 @@ export class ActivityAddComponent {
       currentStreak: 0,
       longestStreak: 0
     });
+    this.router.navigate(["/activities"]);
   }
 
 }
