@@ -12,9 +12,9 @@ import { ActivityModule } from './activity/activity.module';
   ],
   imports: [
     BrowserModule,
+    ActivityModule,
     AppRoutingModule,
-    FontAwesomeModule,
-    ActivityModule
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

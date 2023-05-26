@@ -1,7 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ActivityComponent } from './activity.component';
+import { ActivityAddComponent } from './activity-add/activity-add.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "activities", component: ActivityComponent },
+  { path: "activities/add", component: ActivityAddComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
