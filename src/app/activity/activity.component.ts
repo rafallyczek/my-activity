@@ -3,6 +3,8 @@ import { Activity } from './activity.model';
 import { ActivityService } from './activity-service/activity.service';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
+import { sub } from 'date-fns';
+
 
 @Component({
   selector: 'app-activities',
@@ -15,6 +17,7 @@ export class ActivityComponent implements OnInit {
   addBtn = true;
   iconPlus = faPlus;
   activityList$!: Observable<Activity[]>;
+  date = new Date();
 
   ngOnInit(): void {
     this.loadActivities();
@@ -30,6 +33,10 @@ export class ActivityComponent implements OnInit {
 
   loadActivities(){
     this.activityList$ = this.activityService.getActivities();
+  }
+
+  subDays(days: number){
+    return sub(this.date, {days: days});
   }
   
 }

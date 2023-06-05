@@ -1,14 +1,43 @@
 /* Layout */
+
 .activities{
     display: grid;
     gap: .5rem;
 }
 
+.activity-info{
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    gap: .5rem;
+    align-items: center;
+}
+
+.day-info{
+    display: grid;
+    grid-template-columns: repeat(7, min-content);
+    grid-template-rows: repeat(2, min-content);
+    gap: .3rem;
+    margin-top: .5rem;
+}
+
 /* Elements */
+
 .activity{
-    background-color: var(--clr-gray);
+    background-color: var(--clr-light-gray);
     padding: .5rem;
-    border-radius: .5rem;
+}
+
+.day{
+    width: 48px;
+    height: 48px;
+    padding: .1rem .2rem;
+    background-color: var(--clr-gray);
+    border-radius: .1rem;
+    cursor: pointer;
+}
+
+.day:hover{
+    background-color: var(--clr-medium-gray);
 }
 
 /* Buttons */

@@ -3,8 +3,26 @@
     <button *ngIf="addBtn" class="btn add-btn" routerLink="add">Add activity <fa-icon [icon]="iconPlus"></fa-icon></button>
     <router-outlet (activate)="toggleAddBtn()" (deactivate)="toggleAddBtn(); loadActivities();"></router-outlet>
     <div class="activity" *ngFor="let activity of activityList$ | async">
-        <p class="fw-bold fs-medium">{{activity.title}}</p>
-        <p><span class="fw-bold">Current streak:</span> {{activity.currentStreak}}</p>
-        <p><span class="fw-bold">Longest streak:</span> {{activity.longestStreak}}</p>
+        <div class="activity-info">
+            <p class="fw-bold fs-medium">{{activity.title}}</p>
+            <p class="fs-small"><span class="fw-bold">Current streak:</span> {{activity.currentStreak}}</p>
+            <p class="fs-small"><span class="fw-bold">Longest streak:</span> {{activity.longestStreak}}</p>
+        </div>
+        <div class="day-info">
+            <div class="fs-small">{{subDays(6) | date : "EEE"}}</div>
+            <div class="fs-small">{{subDays(5) | date : "EEE"}}</div>
+            <div class="fs-small">{{subDays(4) | date : "EEE"}}</div>
+            <div class="fs-small">{{subDays(3) | date : "EEE"}}</div>
+            <div class="fs-small">{{subDays(2) | date : "EEE"}}</div>
+            <div class="fs-small">{{subDays(1) | date : "EEE"}}</div>
+            <div class="fs-small">{{date | date : "EEE"}}</div>
+            <div class="day fs-small">{{subDays(6) | date : "mediumDate"}}</div>
+            <div class="day fs-small">{{subDays(5) | date : "mediumDate"}}</div>
+            <div class="day fs-small">{{subDays(4) | date : "mediumDate"}}</div>
+            <div class="day fs-small">{{subDays(3) | date : "mediumDate"}}</div>
+            <div class="day fs-small">{{subDays(2) | date : "mediumDate"}}</div>
+            <div class="day fs-small">{{subDays(1) | date : "mediumDate"}}</div>
+            <div class="day fs-small">{{date | date : "mediumDate"}}</div>
+        </div>
     </div>
 </div>
