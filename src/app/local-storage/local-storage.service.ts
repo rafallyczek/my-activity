@@ -7,14 +7,14 @@ import { Activity } from '../activity/activity.model';
 export class LocalStorageService {
   constructor() {}
 
-  isEmpty() {
+  isEmpty(): boolean {
     if (localStorage.getItem('activities') == null) {
       return true;
     }
     return false;
   }
 
-  saveData(data: Activity[]) {
+  saveData(data: Activity[]): void {
     localStorage.setItem('activities', JSON.stringify(data));
   }
 

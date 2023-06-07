@@ -12,18 +12,18 @@ export class ActivityService {
 
   activities$!: Observable<Activity[]>;
 
-  init(){
+  init(): void {
     if (this.localStorageService.isEmpty()) {
       this.localStorageService.saveData([]);
     }
     this.activities$ = of(this.localStorageService.loadData());
   }
 
-  getActivities(){
+  getActivities(): Observable<Activity[]>{
     return this.activities$;
   }
 
-  addActivity(activity: Activity){
+  addActivity(activity: Activity): void {
     const data = this.localStorageService.loadData();
     data.push(activity);
     this.localStorageService.saveData(data);

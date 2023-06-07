@@ -23,7 +23,7 @@ export class ActivityComponent implements OnInit {
     this.loadActivities();
   }
 
-  toggleAddBtn(){
+  toggleAddBtn(): void {
     if(this.addBtn){
       this.addBtn = false;
     }else{
@@ -31,11 +31,11 @@ export class ActivityComponent implements OnInit {
     }
   }
 
-  loadActivities(){
+  loadActivities(): void {
     this.activityList$ = this.activityService.getActivities();
   }
 
-  subDays(days: number){
+  subDays(days: number): Date {
     return sub(this.date, {days: days});
   }
   

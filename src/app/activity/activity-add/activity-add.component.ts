@@ -18,17 +18,19 @@ export class ActivityAddComponent implements OnInit {
     this.activityForm = this.formBuilder.group({
       title: ["", [Validators.required]],
       currentStreak: [0],
-      longestStreak: [0]
+      longestStreak: [0],
+      history: [[]]
     });
   }
 
-  addActivity(){
+  addActivity(): void {
     this.activityService.addActivity(this.activityForm.getRawValue());
     this.activityForm.reset(
       {
         title: "",
         currentStreak: 0,
-        longestStreak: 0
+        longestStreak: 0,
+        history: []
       }
     );
     this.router.navigate(["/activities"]);
