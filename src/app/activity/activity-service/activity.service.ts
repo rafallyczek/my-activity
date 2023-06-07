@@ -19,7 +19,7 @@ export class ActivityService {
     this.activities$ = of(this.localStorageService.loadData());
   }
 
-  getActivities(): Observable<Activity[]>{
+  getActivities(): Observable<Activity[]> {
     return this.activities$;
   }
 

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivityService } from '../activity-service/activity.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { v4 } from 'uuid';
 
 @Component({
   selector: 'app-activity-add',
@@ -16,6 +17,7 @@ export class ActivityAddComponent implements OnInit {
 
   ngOnInit(): void {
     this.activityForm = this.formBuilder.group({
+      id: v4(),
       title: ["", [Validators.required]],
       currentStreak: [0],
       longestStreak: [0],
@@ -27,6 +29,7 @@ export class ActivityAddComponent implements OnInit {
     this.activityService.addActivity(this.activityForm.getRawValue());
     this.activityForm.reset(
       {
+        id: v4(),
         title: "",
         currentStreak: 0,
         longestStreak: 0,
