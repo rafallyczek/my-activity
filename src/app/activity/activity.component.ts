@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Activity } from './activity.model';
 import { ActivityService } from './activity-service/activity.service';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { sub } from 'date-fns';
 
@@ -16,6 +16,8 @@ export class ActivityComponent implements OnInit {
 
   addBtn = true;
   iconPlus = faPlus;
+  iconPen = faPen;
+  iconXmark = faXmark;
   activityList$!: Observable<Activity[]>;
   date = new Date();
 
