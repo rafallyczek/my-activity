@@ -2,14 +2,14 @@
     <h2>Activities</h2>
     <button *ngIf="addBtn" class="btn add-btn" routerLink="add">Add activity <fa-icon [icon]="iconPlus"></fa-icon></button>
     <router-outlet (activate)="toggleAddBtn()" (deactivate)="toggleAddBtn(); loadActivities();"></router-outlet>
-    <div class="activity" *ngFor="let activity of activityList$ | async">
+    <div class="activity" *ngFor="let activity of activityList$ | async; let i = index">
         <div class="activity-info">
             <p class="fw-bold fs-medium">{{activity.title}}</p>
             <p class="fs-small"><span class="fw-bold">Current streak:</span> {{activity.currentStreak}}</p>
             <p class="fs-small"><span class="fw-bold">Longest streak:</span> {{activity.longestStreak}}</p>
             <div class="activity-buttons">
                 <button title="Edit activity"><fa-icon [icon]="iconPen"></fa-icon></button>
-                <button title="Delete activity"><fa-icon [icon]="iconXmark" size="lg"></fa-icon></button>
+                <button title="Delete activity" (click)="deleteActivity(i)"><fa-icon [icon]="iconXmark" size="lg"></fa-icon></button>
             </div>
         </div>
         <div class="day-info">
