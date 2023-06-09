@@ -41,9 +41,8 @@ export class ActivityComponent implements OnInit {
     return sub(this.date, {days: days});
   }
   
-  //TODO: Implement activity deletion of given index
   deleteActivity(index: number): void {
-    console.log(index);
+    this.activityService.deleteActivity(index);
   }
 
 }

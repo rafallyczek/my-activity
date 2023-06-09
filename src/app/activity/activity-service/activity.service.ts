@@ -30,4 +30,11 @@ export class ActivityService {
     this.activities$ = of(data);
   }
 
+  deleteActivity(index: number): void {
+    const data = this.localStorageService.loadData();
+    data.splice(index, 1);
+    this.localStorageService.saveData(data);
+    this.activities$ = of(data);
+  }
+
 }
