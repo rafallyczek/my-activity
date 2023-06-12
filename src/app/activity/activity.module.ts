@@ -7,6 +7,7 @@ import { ActivityAddComponent } from './activity-add/activity-add.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ActivityService } from './activity-service/activity.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ActivityEditComponent } from './activity-edit/activity-edit.component';
 
 function initializeActivities(activityService: ActivityService){
   return () => activityService.init();
@@ -15,7 +16,8 @@ function initializeActivities(activityService: ActivityService){
 @NgModule({
   declarations: [
     ActivityComponent,
-    ActivityAddComponent
+    ActivityAddComponent,
+    ActivityEditComponent
   ],
   imports: [
     CommonModule,
