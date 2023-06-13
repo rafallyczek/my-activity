@@ -7,7 +7,7 @@ import { ActivityEditComponent } from './activity-edit/activity-edit.component';
 const routes: Routes = [
   { path: "activities", component: ActivityComponent, children: [
     { path: "add", component: ActivityAddComponent },
-    { path: "edit", component: ActivityEditComponent }
+    { path: "edit/:index", component: ActivityEditComponent }
   ] },
 ];
 

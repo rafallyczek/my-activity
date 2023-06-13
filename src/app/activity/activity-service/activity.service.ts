@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from 'src/app/local-storage/local-storage.service';
 import { Activity } from '../activity.model';
-import { Observable, of } from 'rxjs';
+import { Observable, map, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ActivityService {
-
-  constructor(private localStorageService: LocalStorageService) { }
+  constructor(private localStorageService: LocalStorageService) {}
 
   activities$!: Observable<Activity[]>;
 
@@ -21,6 +20,10 @@ export class ActivityService {
 
   getActivities(): Observable<Activity[]> {
     return this.activities$;
+  }
+
+  getActivity(index: number): Observable<Activity> {
+    return this.activities$.pipe(map((activities) => activities[index]));
   }
 
   addActivity(activity: Activity): void {
@@ -36,5 +39,4 @@ export class ActivityService {
     this.localStorageService.saveData(data);
     this.activities$ = of(data);
   }
-
 }
