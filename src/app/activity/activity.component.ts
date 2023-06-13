@@ -14,7 +14,7 @@ import { sub } from 'date-fns';
 export class ActivityComponent implements OnInit {
   constructor(private activityService: ActivityService) {}
 
-  addBtn = true;
+  showAddBtn = true;
   iconPlus = faPlus;
   iconPen = faPen;
   iconXmark = faXmark;
@@ -34,7 +34,7 @@ export class ActivityComponent implements OnInit {
   }
 
   toggleAddBtn(): void {
-    this.addBtn = !this.addBtn;
+    this.showAddBtn = !this.showAddBtn;
   }
 
   subDays(days: number): Date {

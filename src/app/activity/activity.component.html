@@ -1,6 +1,6 @@
 <div class="activities">
     <h2>Activities</h2>
-    <button *ngIf="addBtn" class="btn add-btn" routerLink="add">Add activity <fa-icon [icon]="iconPlus"></fa-icon></button>
+    <button *ngIf="showAddBtn" class="btn add-btn" routerLink="add">Add activity <fa-icon [icon]="iconPlus"></fa-icon></button>
     <router-outlet (activate)="toggleAddBtn()" (deactivate)="toggleAddBtn(); loadActivities();"></router-outlet>
     <div class="activity" *ngFor="let activity of activityList$ | async; let i = index">
         <div class="activity-info">
