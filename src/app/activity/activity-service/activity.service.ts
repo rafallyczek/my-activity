@@ -22,8 +22,20 @@ export class ActivityService {
     return this.activities$;
   }
 
-  getActivity(index: number): Observable<Activity> {
-    return this.activities$.pipe(map((activities) => activities[index]));
+  getActivity(index: number): Observable<Activity> | null {
+    let result!: Observable<Activity> | null;
+    this.activities$
+      .pipe(
+        map((activities) => {
+          return index > activities.length - 1 || index < 0
+            ? null
+            : activities[index];
+        })
+      )
+      .subscribe((activity) => {
+        result = activity == null ? null : of(activity);
+      });
+    return result;
   }
 
   addActivity(activity: Activity): void {

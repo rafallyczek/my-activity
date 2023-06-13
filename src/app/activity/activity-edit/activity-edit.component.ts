@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ActivityService } from '../activity-service/activity.service';
 import { Observable, map } from 'rxjs';
 import { Activity } from '../activity.model';
@@ -12,6 +12,7 @@ import { Activity } from '../activity.model';
 export class ActivityEditComponent implements OnInit {
   constructor(
     private activatedRouteService: ActivatedRoute,
+    private router: Router,
     private activityService: ActivityService
   ) {}
 
@@ -20,6 +21,12 @@ export class ActivityEditComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRouteService.params
       .pipe(map((params) => this.activityService.getActivity(params['index'])))
-      .subscribe((activity) => (this.activity$ = activity));
+      .subscribe((activity) => {
+        if (activity == null) {
+          this.router.navigate(['/activities']);
+        } else {
+          this.activity$ = activity;
+        }
+      });
   }
 }
