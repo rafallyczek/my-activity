@@ -25,24 +25,20 @@ export class ActivityComponent implements OnInit {
     this.loadActivities();
   }
 
-  toggleAddBtn(): void {
-    if(this.addBtn){
-      this.addBtn = false;
-    }else{
-      this.addBtn = true;
-    }
-  }
-
   loadActivities(): void {
     this.activityList$ = this.activityService.getActivities();
-  }
-
-  subDays(days: number): Date {
-    return sub(this.date, {days: days});
   }
   
   deleteActivity(index: number): void {
     this.activityService.deleteActivity(index);
+  }
+
+  toggleAddBtn(): void {
+    this.addBtn = !this.addBtn;
+  }
+
+  subDays(days: number): Date {
+    return sub(this.date, {days: days});
   }
 
 }
