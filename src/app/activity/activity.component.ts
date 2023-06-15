@@ -5,21 +5,20 @@ import { faPlus, faPen, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { sub } from 'date-fns';
 
-
 @Component({
   selector: 'app-activities',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.css'],
 })
 export class ActivityComponent implements OnInit {
-  constructor(private activityService: ActivityService) {}
-
   showAddBtn = true;
   iconPlus = faPlus;
   iconPen = faPen;
   iconXmark = faXmark;
   activityList$!: Observable<Activity[]>;
   date = new Date();
+
+  constructor(private activityService: ActivityService) {}
 
   ngOnInit(): void {
     this.loadActivities();
@@ -28,7 +27,7 @@ export class ActivityComponent implements OnInit {
   loadActivities(): void {
     this.activityList$ = this.activityService.getActivities();
   }
-  
+
   deleteActivity(index: number): void {
     this.activityService.deleteActivity(index);
   }
@@ -38,7 +37,6 @@ export class ActivityComponent implements OnInit {
   }
 
   subDays(days: number): Date {
-    return sub(this.date, {days: days});
+    return sub(this.date, { days: days });
   }
-
 }

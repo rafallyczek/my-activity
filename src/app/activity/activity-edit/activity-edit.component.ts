@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ActivityService } from '../activity-service/activity.service';
-import { Observable, map } from 'rxjs';
-import { Activity } from '../activity.model';
+import { map } from 'rxjs';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-activity-edit',
@@ -10,23 +10,39 @@ import { Activity } from '../activity.model';
   styleUrls: ['./activity-edit.component.css'],
 })
 export class ActivityEditComponent implements OnInit {
+  activityForm!: FormGroup;
+
   constructor(
     private activatedRouteService: ActivatedRoute,
     private router: Router,
-    private activityService: ActivityService
+    private activityService: ActivityService,
+    private formBuilder: FormBuilder
   ) {}
 
-  activity$!: Observable<Activity>;
-
   ngOnInit(): void {
+    this.activityForm = this.formBuilder.group({
+      id: [''],
+      title: ['', [Validators.required]],
+      currentStreak: [0],
+      longestStreak: [0],
+      history: [[]],
+    });
+    this.setForm();
+  }
+
+  setForm() {
     this.activatedRouteService.params
       .pipe(map((params) => this.activityService.getActivity(params['index'])))
       .subscribe((activity) => {
         if (activity == null) {
           this.router.navigate(['/activities']);
         } else {
-          this.activity$ = activity;
+          this.activityForm.setValue(activity);
         }
       });
+  }
+
+  updateActivity() {
+    console.log(this.activityForm.getRawValue());
   }
 }
