@@ -7,9 +7,10 @@ import { Observable, map, of } from 'rxjs';
   providedIn: 'root',
 })
 export class ActivityService {
-  constructor(private localStorageService: LocalStorageService) {}
-
+  
   activities$!: Observable<Activity[]>;
+
+  constructor(private localStorageService: LocalStorageService) {}
 
   init(): void {
     if (this.localStorageService.isEmpty()) {

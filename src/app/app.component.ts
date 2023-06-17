@@ -7,10 +7,10 @@ import { faPersonRunning, faCaretLeft, faCaretRight } from '@fortawesome/free-so
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   iconRunning = faPersonRunning;
   iconCaret = faCaretLeft;
 
-  //Hide or show navigation bar
   toggleNav(): void {
     if(this.iconCaret.iconName === "caret-left"){
       this.iconCaret = faCaretRight;

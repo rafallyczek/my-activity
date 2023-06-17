@@ -10,6 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./activity-edit.component.css'],
 })
 export class ActivityEditComponent implements OnInit {
+  
   activityForm!: FormGroup;
 
   constructor(

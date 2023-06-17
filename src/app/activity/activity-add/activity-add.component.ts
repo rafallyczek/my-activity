@@ -10,7 +10,7 @@ import { v4 } from 'uuid';
   styleUrls: ['./activity-add.component.css']
 })
 export class ActivityAddComponent implements OnInit {
-
+  
   activityForm!: FormGroup;
 
   constructor(private activityService: ActivityService, private router: Router, private formBuilder: FormBuilder) {}

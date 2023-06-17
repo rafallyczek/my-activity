@@ -5,6 +5,7 @@ import { Activity } from '../activity/activity.model';
   providedIn: 'root',
 })
 export class LocalStorageService {
+  
   constructor() {}
 
   isEmpty(): boolean {

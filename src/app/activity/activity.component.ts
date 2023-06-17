@@ -11,6 +11,7 @@ import { sub } from 'date-fns';
   styleUrls: ['./activity.component.css'],
 })
 export class ActivityComponent implements OnInit {
+  
   showAddBtn = true;
   iconPlus = faPlus;
   iconPen = faPen;
