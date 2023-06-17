@@ -27,15 +27,6 @@ export class ActivityAddComponent implements OnInit {
 
   addActivity(): void {
     this.activityService.addActivity(this.activityForm.getRawValue());
-    this.activityForm.reset(
-      {
-        id: v4(),
-        title: "",
-        currentStreak: 0,
-        longestStreak: 0,
-        history: []
-      }
-    );
     this.router.navigate(["/activities"]);
   }
 
