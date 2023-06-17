@@ -51,4 +51,12 @@ export class ActivityService {
     this.localStorageService.saveData(data);
     this.activities$ = of(data);
   }
+
+  updateActivity(activity: Activity): void {
+    const data = this.localStorageService.loadData();
+    const index = data.findIndex((item) => item.id === activity.id);
+    data[index] = activity;
+    this.localStorageService.saveData(data);
+    this.activities$ = of(data);
+  }
 }

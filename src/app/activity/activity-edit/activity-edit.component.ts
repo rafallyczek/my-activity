@@ -30,7 +30,7 @@ export class ActivityEditComponent implements OnInit {
     this.setForm();
   }
 
-  setForm() {
+  setForm(): void {
     this.activatedRouteService.params
       .pipe(map((params) => this.activityService.getActivity(params['index'])))
       .subscribe((activity) => {
@@ -42,7 +42,8 @@ export class ActivityEditComponent implements OnInit {
       });
   }
 
-  updateActivity() {
-    console.log(this.activityForm.getRawValue());
+  updateActivity(): void {
+    this.activityService.updateActivity(this.activityForm.getRawValue());
+    this.router.navigate(["/activities"]);
   }
 }
