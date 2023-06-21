@@ -1,0 +1,24 @@
+/* Layout */
+
+.day-info{
+    display: grid;
+    grid-template-columns: repeat(7, min-content);
+    grid-template-rows: repeat(2, min-content);
+    gap: .3rem;
+    margin-top: .5rem;
+}
+
+/* Elements */
+
+.day{
+    width: 48px;
+    height: 48px;
+    padding: .1rem .2rem;
+    background-color: var(--clr-gray);
+    border-radius: .1rem;
+    cursor: pointer;
+}
+
+.day:hover{
+    background-color: var(--clr-medium-gray);
+}

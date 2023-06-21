@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ActivityService } from './activity-service/activity.service';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ActivityEditComponent } from './activity-edit/activity-edit.component';
+import { ActivityTimelineComponent } from './activity-timeline/activity-timeline.component';
 
 function initializeActivities(activityService: ActivityService){
   return () => activityService.init();
@@ -17,7 +18,8 @@ function initializeActivities(activityService: ActivityService){
   declarations: [
     ActivityComponent,
     ActivityAddComponent,
-    ActivityEditComponent
+    ActivityEditComponent,
+    ActivityTimelineComponent
   ],
   imports: [
     CommonModule,
