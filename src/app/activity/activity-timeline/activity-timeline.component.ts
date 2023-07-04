@@ -14,4 +14,9 @@ export class ActivityTimelineComponent {
     return sub(this.date, { days: days });
   }
 
+  //TODO: implement adding activity record to activity's history array
+  addActivityRecord(date: Date): void {
+    console.log(date);
+  }
+
 }
