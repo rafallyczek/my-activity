@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { sub } from 'date-fns';
 
 @Component({
@@ -8,6 +8,7 @@ import { sub } from 'date-fns';
 })
 export class ActivityTimelineComponent {
 
+  @Input() index = 0;
   date = new Date();
 
   subDays(days: number): Date {
@@ -17,6 +18,7 @@ export class ActivityTimelineComponent {
   //TODO: implement adding activity record to activity's history array
   addActivityRecord(date: Date): void {
     console.log(date);
+    console.log(this.index);
   }
 
 }
