@@ -60,4 +60,25 @@ export class ActivityService {
     this.localStorageService.saveData(data);
     this.activities$ = of(data);
   }
+
+  addOrDeleteActivityRecord(index: number, date: Date): void {
+    let activity = this.getActivity(index);
+
+    if (activity == null){
+      return;
+    }
+
+    if (!activity?.history.find(record => record.getTime() === date.getTime())){
+      activity?.history.push(date);
+    } else {
+      let recordIndex = activity?.history.findIndex(record => record.getTime() === date.getTime());
+      activity.history.splice(recordIndex, 1);
+    }
+
+    this.updateActivity(activity);
+    this.activities$.subscribe((activity) => {
+      console.log(activity);
+    });
+  }
+
 }
