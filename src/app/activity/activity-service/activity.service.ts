@@ -76,9 +76,6 @@ export class ActivityService {
     }
 
     this.updateActivity(activity);
-    this.activities$.subscribe((activity) => {
-      console.log(activity);
-    });
   }
 
 }
