@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 import { sub } from 'date-fns';
 import { ActivityService } from '../activity-service/activity.service';
 
@@ -10,6 +10,7 @@ import { ActivityService } from '../activity-service/activity.service';
 export class ActivityTimelineComponent implements OnInit {
 
   @Input() index = 0;
+  @Output() activityRecordToggled = new EventEmitter();
   date = new Date();
 
   constructor(private activityService: ActivityService) {}
@@ -24,6 +25,7 @@ export class ActivityTimelineComponent implements OnInit {
 
   toggleActivityRecord(date: Date): void {
     this.activityService.addOrDeleteActivityRecord(this.index, date);
+    this.activityRecordToggled.emit();
   }
 
 }

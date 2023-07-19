@@ -12,6 +12,6 @@
                 <button title="Delete activity" (click)="deleteActivity(i); loadActivities();"><fa-icon [icon]="iconXmark" size="lg"></fa-icon></button>
             </div>
         </div>
-        <app-activity-timeline [index]="i"></app-activity-timeline>
+        <app-activity-timeline [index]="i" (activityRecordToggled)="loadActivities()"></app-activity-timeline>
     </div>
 </div>
