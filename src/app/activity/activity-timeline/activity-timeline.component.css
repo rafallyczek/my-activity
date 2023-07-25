@@ -17,7 +17,12 @@
     background-color: var(--clr-gray);
     border-radius: .1rem;
     cursor: pointer;
-    transition: background-color 0.5s ease-out;
+    transition: background-color 0.3s ease-out,
+                transform 0.5s ease-out;
+}
+
+.day:active{
+    transform: scale(0.9);
 }
 
 .day:hover{
