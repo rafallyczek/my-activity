@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Activity } from '../activity/activity.model';
+import { parseISO } from 'date-fns';
 
 @Injectable({
   providedIn: 'root',
@@ -20,6 +21,10 @@ export class LocalStorageService {
   }
 
   loadData(): Activity[] {
-    return JSON.parse(localStorage.getItem('activities')!);
+    const activities: Activity[] = JSON.parse(localStorage.getItem('activities')!);
+    activities.forEach(activity => {
+      activity.history.forEach((record, index) => activity.history[index] = parseISO(record))
+    });
+    return activities;
   }
 }
