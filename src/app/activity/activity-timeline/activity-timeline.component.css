@@ -17,8 +17,17 @@
     background-color: var(--clr-gray);
     border-radius: .1rem;
     cursor: pointer;
+    transition: background-color 0.5s ease-out;
 }
 
 .day:hover{
     background-color: var(--clr-medium-gray);
+}
+
+.day.success{
+    background-color: var(--clr-success);
+}
+
+.day.success:hover{
+    background-color: var(--clr-success-dark);
 }

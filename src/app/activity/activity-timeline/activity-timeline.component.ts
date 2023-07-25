@@ -9,7 +9,8 @@ import { ActivityService } from '../activity-service/activity.service';
 })
 export class ActivityTimelineComponent implements OnInit {
 
-  @Input() index = 0;
+  @Input() index: number = 0;
+  @Input() history: Date[] = [];
   @Output() activityRecordToggled = new EventEmitter();
   date = new Date();
 
@@ -26,6 +27,13 @@ export class ActivityTimelineComponent implements OnInit {
   toggleActivityRecord(date: Date): void {
     this.activityService.addOrDeleteActivityRecord(this.index, date);
     this.activityRecordToggled.emit();
+  }
+
+  findRecord(date: Date): boolean {
+    if(this.history.find(record => record.getTime() === date.getTime())){
+      return true;
+    }
+    return false;
   }
 
 }
