@@ -36,3 +36,27 @@
 .day.success:hover{
     background-color: var(--clr-success-dark);
 }
+
+.day.danger{
+    background-color: var(--clr-danger);
+}
+
+.day.danger:hover{
+    background-color: var(--clr-danger-dark);
+}
+
+.day.primary{
+    background-color: var(--clr-primary);
+}
+
+.day.primary:hover{
+    background-color: var(--clr-primary-dark);
+}
+
+.day.warning{
+    background-color: var(--clr-warning);
+}
+
+.day.warning:hover{
+    background-color: var(--clr-warning-dark);
+}

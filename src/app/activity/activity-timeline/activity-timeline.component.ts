@@ -11,6 +11,7 @@ export class ActivityTimelineComponent implements OnInit {
 
   @Input() index: number = 0;
   @Input() history: Date[] = [];
+  @Input() color!: string;
   @Output() activityRecordToggled = new EventEmitter();
   date = new Date();
 

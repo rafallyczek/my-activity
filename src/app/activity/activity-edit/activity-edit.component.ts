@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ActivityEditComponent implements OnInit {
   
   activityForm!: FormGroup;
+  color!: string;
 
   constructor(
     private activatedRouteService: ActivatedRoute,
@@ -27,6 +28,7 @@ export class ActivityEditComponent implements OnInit {
       currentStreak: [0],
       longestStreak: [0],
       history: [[]],
+      color: ['']
     });
     this.setForm();
   }
@@ -39,6 +41,7 @@ export class ActivityEditComponent implements OnInit {
           this.router.navigate(['/activities']);
         } else {
           this.activityForm.setValue(activity);
+          this.color = `bgc-${activity.color}`;
         }
       });
   }
@@ -47,4 +50,9 @@ export class ActivityEditComponent implements OnInit {
     this.activityService.updateActivity(this.activityForm.getRawValue());
     this.router.navigate(["/activities"]);
   }
+
+  changeColor(value: string): void {
+    this.color = `bgc-${value}`;
+  }
+
 }

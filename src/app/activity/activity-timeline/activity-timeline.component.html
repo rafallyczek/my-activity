@@ -6,11 +6,11 @@
     <div class="fs-small">{{subDays(2) | date : "EEE"}}</div>
     <div class="fs-small">{{subDays(1) | date : "EEE"}}</div>
     <div class="fs-small">{{date | date : "EEE"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(subDays(6)) ? 'success' : ''" (click)="toggleActivityRecord(subDays(6))">{{subDays(6) | date : "mediumDate"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(subDays(5)) ? 'success' : ''" (click)="toggleActivityRecord(subDays(5))">{{subDays(5) | date : "mediumDate"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(subDays(4)) ? 'success' : ''" (click)="toggleActivityRecord(subDays(4))">{{subDays(4) | date : "mediumDate"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(subDays(3)) ? 'success' : ''" (click)="toggleActivityRecord(subDays(3))">{{subDays(3) | date : "mediumDate"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(subDays(2)) ? 'success' : ''" (click)="toggleActivityRecord(subDays(2))">{{subDays(2) | date : "mediumDate"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(subDays(1)) ? 'success' : ''" (click)="toggleActivityRecord(subDays(1))">{{subDays(1) | date : "mediumDate"}}</div>
-    <div class="day fs-small" [ngClass]="findRecord(date) ? 'success' : ''" (click)="toggleActivityRecord(date)">{{date | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(subDays(6)) ? color : ''" (click)="toggleActivityRecord(subDays(6))">{{subDays(6) | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(subDays(5)) ? color : ''" (click)="toggleActivityRecord(subDays(5))">{{subDays(5) | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(subDays(4)) ? color : ''" (click)="toggleActivityRecord(subDays(4))">{{subDays(4) | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(subDays(3)) ? color : ''" (click)="toggleActivityRecord(subDays(3))">{{subDays(3) | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(subDays(2)) ? color : ''" (click)="toggleActivityRecord(subDays(2))">{{subDays(2) | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(subDays(1)) ? color : ''" (click)="toggleActivityRecord(subDays(1))">{{subDays(1) | date : "mediumDate"}}</div>
+    <div class="day fs-small" [ngClass]="findRecord(date) ? color : ''" (click)="toggleActivityRecord(date)">{{date | date : "mediumDate"}}</div>
 </div>

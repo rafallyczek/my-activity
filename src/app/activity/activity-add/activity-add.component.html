@@ -6,6 +6,13 @@
         <label [ngClass]="activityForm.get('title')?.hasError('required') && activityForm.get('title')?.touched ? 'text-clr-danger' : ''" for="title">TITLE</label>
         <input [ngClass]="activityForm.get('title')?.hasError('required') && activityForm.get('title')?.touched ? 'invalid' : ''" formControlName="title" name="title" id="title" type="text" required>
         <p class="text-clr-danger fs-small" *ngIf="activityForm.get('title')?.hasError('required') && activityForm.get('title')?.touched">Please provide title!</p>
+        <label for="color">COLOR</label>
+        <select #colors formControlName="color" name="color" id="color" (change)="changeColor(colors.value)" [ngClass]="color">
+            <option value="success" selected>Green</option>
+            <option value="danger">Red</option>
+            <option value="primary">Blue</option>
+            <option value="warning">Yellow</option>
+        </select>
     </div>
     <div class="form-buttons">
         <button class="btn submit-btn" type="submit" [disabled]="activityForm.invalid" [attr.title]="activityForm.invalid ? 'Form is invalid' : 'Submit form'">Add activity</button>

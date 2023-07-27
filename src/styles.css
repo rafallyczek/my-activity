@@ -8,12 +8,16 @@
     --clr-medium-gray: hsl(0, 0%, 70%);
     --clr-light-gray: hsl(0, 0%, 85%);
     --clr-primary: hsl(207, 44%, 49%);
+    --clr-primary-dark: hsl(207, 44%, 44%);
 
     --clr-success: hsl(130, 55%, 45%);
     --clr-success-dark: hsl(130, 55%, 40%);
 
     --clr-danger: hsl(0, 55%, 45%);
     --clr-danger-dark: hsl(0, 55%, 40%);
+
+    --clr-warning: hsl(50, 100%, 45%);
+    --clr-warning-dark: hsl(50, 100%, 40%);
 
     --fw-bold: 600;
 
@@ -111,7 +115,7 @@ button{
   font-size: var(--fs-small);
 }
 
-.form-input > input{
+.form-input > input, .form-input > select{
   padding: .3rem;
   border-radius: .3rem;
   border: 1px solid var(--clr-dark);
@@ -120,6 +124,14 @@ button{
 
 .form-input > input.invalid{
   border: 1px solid var(--clr-danger-dark);
+}
+
+.form-input > select{
+  cursor: pointer;
+}
+
+option{
+  background-color: var(--clr-light);
 }
 
 /* Utility */
@@ -138,6 +150,18 @@ button{
 
 .bgc-primary{
   background-color: var(--clr-primary);
+}
+
+.bgc-success{
+  background-color: var(--clr-success);
+}
+
+.bgc-danger{
+  background-color: var(--clr-danger);
+}
+
+.bgc-warning{
+  background-color: var(--clr-warning);
 }
 
 .fw-bold{

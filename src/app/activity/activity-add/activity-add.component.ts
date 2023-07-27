@@ -12,6 +12,7 @@ import { v4 } from 'uuid';
 export class ActivityAddComponent implements OnInit {
   
   activityForm!: FormGroup;
+  color: string = "bgc-success";
 
   constructor(private activityService: ActivityService, private router: Router, private formBuilder: FormBuilder) {}
 
@@ -21,13 +22,18 @@ export class ActivityAddComponent implements OnInit {
       title: ["", [Validators.required]],
       currentStreak: [0],
       longestStreak: [0],
-      history: [[]]
+      history: [[]],
+      color: ["success"]
     });
   }
 
   addActivity(): void {
     this.activityService.addActivity(this.activityForm.getRawValue());
     this.router.navigate(["/activities"]);
+  }
+
+  changeColor(value: string): void {
+    this.color = `bgc-${value}`;
   }
 
 }
