@@ -4,4 +4,5 @@ export interface Activity {
     currentStreak: number;
     longestStreak: number;
     history: any[];
+    color: string;
 }
