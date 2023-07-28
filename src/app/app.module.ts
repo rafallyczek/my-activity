@@ -5,10 +5,12 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ActivityModule } from './activity/activity.module';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
