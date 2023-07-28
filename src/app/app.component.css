@@ -52,3 +52,16 @@ footer{
 .nav-links, .nav-links li{
     margin-top: .5rem;
 }
+
+.nav-links li{
+    padding: .3rem;
+    cursor: pointer;
+}
+
+.nav-links li a{
+    display: block;
+}
+
+.nav-links li:hover{
+    background-color: var(--clr-medium-dark);
+}
