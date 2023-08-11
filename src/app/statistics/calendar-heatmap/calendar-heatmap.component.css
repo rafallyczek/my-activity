@@ -1,0 +1,15 @@
+.heatmap {
+    display: grid;
+    grid-template: repeat(7, 10px) / repeat(53, 10px);
+    gap: 2px;
+    grid-auto-flow: column;
+    margin-top: .5rem;
+}
+
+.tile {
+    background-color: var(--clr-medium-dark);
+}
+
+.tile.empty {
+    background-color: var(--clr-light);
+}

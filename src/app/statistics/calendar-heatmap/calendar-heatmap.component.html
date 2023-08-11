@@ -1,1 +1,5 @@
-<p>calendar-heatmap works!</p>
+<p class="fw-bold fs-medium">Activity heatmap</p>
+<div class="heatmap">
+    <div class="tile empty" *appRepeat="offset"></div>
+    <div class="tile" *appRepeat="daysInYear"></div>
+</div>

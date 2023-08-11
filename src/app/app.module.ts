@@ -6,11 +6,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ActivityModule } from './activity/activity.module';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { CalendarHeatmapComponent } from './statistics/calendar-heatmap/calendar-heatmap.component';
+import { RepeatDirective } from './directives/repeat.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    CalendarHeatmapComponent,
+    RepeatDirective
   ],
   imports: [
     BrowserModule,
