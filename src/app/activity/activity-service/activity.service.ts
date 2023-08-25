@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { LocalStorageService } from 'src/app/local-storage/local-storage.service';
+import { LocalStorageService } from 'src/app/services/local-storage/local-storage.service';
 import { Activity } from '../activity.model';
 import { Observable, map, of } from 'rxjs';
 import { sub, toDate } from 'date-fns';

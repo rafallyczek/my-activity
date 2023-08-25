@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Activity } from '../activity/activity.model';
+import { Activity } from 'src/app/activity/activity.model';
 import { parseISO } from 'date-fns';
 
 @Injectable({

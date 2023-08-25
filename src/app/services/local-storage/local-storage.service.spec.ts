@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { LocalStorageService } from './local-storage.service';
-import { Activity } from '../activity/activity.model';
+import { Activity } from 'src/app/activity/activity.model';
 
 describe('LocalStorageService', () => {
   let service: LocalStorageService;
@@ -35,9 +35,12 @@ describe('LocalStorageService', () => {
   it('should save activities in local storage', () => {
     const activities: Activity[] = [
       {
+        id: "test",
         title: "test",
         currentStreak: 0,
-        longestStreak: 0
+        longestStreak: 0,
+        history: [],
+        color: "test"
       }
     ]
     service.saveData(activities);
@@ -47,9 +50,12 @@ describe('LocalStorageService', () => {
   it('should load activities from local storage', () => {
     const activities: Activity[] = [
       {
+        id: "test",
         title: "test",
         currentStreak: 0,
-        longestStreak: 0
+        longestStreak: 0,
+        history: [],
+        color: "test"
       }
     ]
     localStorage.setItem("activities", JSON.stringify(activities));
@@ -64,9 +70,12 @@ describe('LocalStorageService', () => {
   it('should return "false" when local storage contains activities', () => {
     const activities: Activity[] = [
       {
+        id: "test",
         title: "test",
         currentStreak: 0,
-        longestStreak: 0
+        longestStreak: 0,
+        history: [],
+        color: "test"
       }
     ]
     localStorage.setItem("activities", JSON.stringify(activities));
